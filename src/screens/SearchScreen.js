@@ -7,8 +7,16 @@ import useResults from '../hooks/useResults';
 const SearchScreen = () => {
 	const [term, setTerm] = useState('');
 
-	// call custom hook
+	// destructure custom hook
 	const [searchAPi, results, errorMsg] = useResults();
+
+	const filterResultsByPrice = (price) => {
+		// price === '$' || '$$' || '$$$'
+
+		return results.filter((result) => {
+			return result.price === price;
+		});
+	};
 
 	return (
 		<View>
@@ -22,9 +30,12 @@ const SearchScreen = () => {
 			) : (
 				<Text>We have found {results.length} results</Text>
 			)}
-			<ResultList title={'Cost Effective'} />
-			<ResultList title={'Bit Pricier'} />
-			<ResultList title={'Big Spender'} />
+			<ResultList
+				title={'Cost Effective'}
+				results={filterResultsByPrice('$')}
+			/>
+			<ResultList title={'Bit Pricier'} results={filterResultsByPrice('$$')} />
+			<ResultList title={'Big Spender'} results={filterResultsByPrice('$$$')} />
 		</View>
 	);
 };
