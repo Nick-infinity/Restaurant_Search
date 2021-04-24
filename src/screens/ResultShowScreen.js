@@ -19,7 +19,7 @@ const ResultShowScreen = ({ route }) => {
 		return null;
 	}
 	return (
-		<View>
+		<View style={styles.container}>
 			<FlatList
 				data={result.photos}
 				keyExtractor={(photo) => photo}
@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
 	imageStyle: {
 		height: 200,
 		width: 300,
+		marginBottom: 10,
+		borderRadius: 5,
+	},
+	container: {
+		paddingTop: 10,
 	},
 });
 
