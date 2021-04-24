@@ -7,6 +7,8 @@ const SearchBar = ({ term, onTermChange }) => {
 		<View style={styles.backgroundStyle}>
 			<Feather name="search" style={styles.iconStyle} />
 			<TextInput
+				autoCapitalize="none"
+				autoCorrect={false}
 				placeholder={'Search'}
 				style={styles.inputStyel}
 				value={term}
