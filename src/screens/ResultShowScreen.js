@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 
-const ResultShowScreen = () => {
+const ResultShowScreen = ({ route }) => {
+	const { id } = route.params;
 	return (
 		<View>
-			<Text>Result show</Text>
+			<Text>{id}</Text>
 		</View>
 	);
 };
