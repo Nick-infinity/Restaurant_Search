@@ -4,7 +4,7 @@ import ResultList from '../components/ResultList';
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
 	const [term, setTerm] = useState('');
 
 	// destructure custom hook
@@ -30,14 +30,17 @@ const SearchScreen = () => {
 				<ResultList
 					title={'Cost Effective'}
 					results={filterResultsByPrice('$')}
+					navigation={navigation}
 				/>
 				<ResultList
 					title={'Bit Pricier'}
 					results={filterResultsByPrice('$$')}
+					navigation={navigation}
 				/>
 				<ResultList
 					title={'Big Spender'}
 					results={filterResultsByPrice('$$$')}
+					navigation={navigation}
 				/>
 			</ScrollView>
 		</View>
