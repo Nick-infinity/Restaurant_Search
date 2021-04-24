@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
 const ResultList = ({ title, results }) => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text style={styles.titleStyle}> {title}</Text>
 			<FlatList
 				horizontal
@@ -19,9 +19,14 @@ const ResultList = ({ title, results }) => {
 	);
 };
 const styles = StyleSheet.create({
+	container: {
+		marginBottom: 10,
+	},
 	titleStyle: {
 		fontSize: 18,
 		fontWeight: 'bold',
+		marginLeft: 5,
+		marginBottom: 5,
 	},
 });
 export default ResultList;
